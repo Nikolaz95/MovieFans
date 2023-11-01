@@ -1,0 +1,48 @@
+
+
+
+/* registering */
+
+
+.registering-section {
+    margin: 20px;
+    padding: 50px 0;
+    border: 1px solid black;
+  }
+  
+  .title-registering {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+  }
+  
+  .card-registering {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .lef-registering {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 20px;
+    font-size: 20px;
+    gap: 20px;
+  }
+  
+  
+  
+  .right-registering {
+    border: 1px solid black;
+    padding: 20px;
+  }
+  
+  .create-acc {
+    border: 1px solid black;
+    padding: 10px;
+  }

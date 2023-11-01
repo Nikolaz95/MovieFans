@@ -1,0 +1,63 @@
+
+
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.cards-content {
+    min-height: 550px;
+    max-width: 250px;
+    border-radius: 20px;
+}
+
+.cards-img {
+    border-radius: 20px;
+    height: 400px;
+    cursor: pointer;
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.movie-name {
+    font-size: 20px;
+}
+
+.movie-rating {
+    font-size: 20px;
+}
+
+.icon-favorit {
+    font-size: 20px;
+}
+
+.add-watchlist {
+    background:linear-gradient(to bottom, #12a2b5 5%, #378591 100%);
+    background-color:#12a2b5;
+    border-radius:20px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration:none;
+}
+
+.add-watchlist:hover {
+    background:linear-gradient(to bottom, #378591 5%, #12a2b5 100%);
+    background-color:#378591;
+} 
+
+.add-watchlist:active {
+    position:relative;
+    top:1px;
+}
