@@ -2,6 +2,8 @@
 
 
 import React from 'react'
+import { NavLink, Link } from 'react-router-dom';
+
 
 import './Registering.css';
 
@@ -22,11 +24,23 @@ const Registering = () => {
 
                         <label htmlFor="pwd">password :</label>
                         <input type="password" id='pwd' placeholder='password...' />
+                        <div className="btn-login">
+                            <button className="login">Log in</button>
+                        </div>
                     </form>
 
-                    <div className="btn-registering">
-                        <button className="create-acc">Create a New Accoutn</button>
+
+                    <div className="divider-text">
+                        <span>Or:</span>
                     </div>
+
+
+                    <NavLink to="/accoutn">
+                        <div className="btn-registering">
+                            <button className="create-acc">Create a New Accoutn</button>
+                        </div>
+                    </NavLink>
+
                 </div>
 
                 <div className="right-registering">
@@ -42,6 +56,7 @@ const Registering = () => {
 
                 </div>
             </div>
+
 
         </section>
     )

@@ -13,6 +13,7 @@ import Registering from './pages/Registering.jsx';
 import Content from './pages/Content.jsx';
 import MoviesDetails from './pages/MoviesDetails.jsx';
 import Search from './pages/Search.jsx';
+import CreateAccount from './pages/CreateAccount.jsx';
 
 
 const router = createBrowserRouter([
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
       {
         path: "/logIn",
         element: <Registering />
+      },
+
+      {
+        path: "/accoutn",
+        element: <CreateAccount />
       },
 
     ]

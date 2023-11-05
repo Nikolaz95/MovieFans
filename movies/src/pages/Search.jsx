@@ -22,7 +22,7 @@ const Search = () => {
     const [searchResults, setSearchResults] = useState([]);
 
     const apiKey = 'd0e15d3cd703e39934833d9dc348e907';
-    const apiUrl = 'https://api.themoviedb.org/3/search/movie';
+    const apiUrl = 'https://api.themoviedb.org/3/search/multi';
 
     console.log('API URL:', apiUrl);
     console.log('API Key:', apiKey);

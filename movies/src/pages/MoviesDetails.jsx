@@ -4,6 +4,8 @@
 
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+
 
 
 
@@ -32,7 +34,11 @@ const MoviesDetails = () => {
 
 
     /* funckija za arrow u slideru */
-    /* function Arrow(props) {
+
+
+
+
+    function Arrow(props) {
         const { className, style, onClick } = props;
         return (
             <div
@@ -41,52 +47,109 @@ const MoviesDetails = () => {
                 onClick={onClick}
             />
         );
-    } */
+    }
+
+
+
+
+    /* funckija za ActorsSlider */
+
+
+    const ActorsSlider = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        nextArrow: <Arrow />,
+        prevArrow: <Arrow />,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
+
+
 
 
     /* funckija za slider */
-    /*  
-    const actorsSlider = {
-         dots: true,
-         infinite: true,
-         speed: 500,
-         slidesToShow: 4,
-         slidesToScroll: 1,
-         initialSlide: 0,
-         nextArrow: <Arrow />,
-         prevArrow: <Arrow />,
-         responsive: [
-             {
-                 breakpoint: 1024,
-                 settings: {
-                     slidesToShow: 3,
-                     slidesToScroll: 3,
-                     infinite: true,
-                     dots: true
-                 }
-             },
-             {
-                 breakpoint: 600,
-                 settings: {
-                     slidesToShow: 2,
-                     slidesToScroll: 2,
-                     initialSlide: 2
-                 }
-             },
-             {
-                 breakpoint: 480,
-                 settings: {
-                     slidesToShow: 1,
-                     slidesToScroll: 1
-                 }
-             }
-         ]
-     };
-  */
+
+
+
+    const RecomendetionsSlider = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        nextArrow: <Arrow />,
+        prevArrow: <Arrow />,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
+
 
 
     const params = useParams();
     const [data, setData] = useState(null);
+
+    /* fetch  recommendations*/
+    const [recommendations, setRecommendations] = useState([]);
+
+
+    /* fetch  credits actors */
+    const [credits, setCredits] = useState(null);
+
 
 
     useEffect(() => {
@@ -96,7 +159,26 @@ const MoviesDetails = () => {
             setData(json);
             console.log(json)
         }
+
+        async function fetchMovieRecomendations() {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/similar?api_key=d0e15d3cd703e39934833d9dc348e907`);
+
+            const json = await response.json();
+            setRecommendations(json.results);
+        }
+
+
+        async function fetchMovieCredits() {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=d0e15d3cd703e39934833d9dc348e907`);
+            const json = await response.json();
+            setCredits(json);
+        }
+
+
+
         fetchMovieDetails();
+        fetchMovieRecomendations();
+        fetchMovieCredits();
     }, [params.id])
 
 
@@ -134,6 +216,7 @@ const MoviesDetails = () => {
                         </div>
 
                         <div className='movie-genres'>
+
                             {/* <span className="movie-genre">Action</span>
                             <span className="movie-genre">Action</span>
                             <span className="movie-genre">Action</span> */}
@@ -171,58 +254,58 @@ const MoviesDetails = () => {
             </div>
 
 
+            <section className='actors'>
+                <h1 className='title-actors'>Actors:</h1>
 
+                <div className="actors-content">
 
-            {/* <section className='actors-section'> */}
-            {/* <h1 className="title-actors">Actors:</h1> */}
+                    <Slider {...ActorsSlider}>
+                        {credits?.cast?.map(actor => (
+                            <div key={actor.id} class="actors-card">
+                                <img src={`https://image.tmdb.org/t/p/w185/${actor.profile_path}`} alt="Person" class="actors-img" />
 
-            {/* <div className="actors-content"> */}
-
-
-            {/* <Slider {...actorsSlider}>  */}
-
-            {/* <div className="actors-card">
-                        <img src={Actor} alt="" className="actor-image" />
-                        <div className="actors-info">
-                            <p className="actors-name">Tom Cruise</p>
-                            <p className="character">Ethan Hunt</p>
-                        </div>
-                    </div> */}
-
-
-
-            {/* </Slider> */}
-
-
-            {/* </div> */}
-
-            {/* </section> */}
-
-            {/* <section className="reviews-section">
-                <h1 className='title-previews'>REVIEWS :</h1>
-
-                <div className="reviews-content">
-                    <div className="content-inner">
-                        <div className="avatar-icon">
-                            <img src={Actor} height={50} width={50} alt="" />
-                        </div>
-                        <div className="content-right">
-                            <div className="review-topright">
-                                <h5 className="user-name">username</h5>
-                                <p className='"review-date'>01//1/2001 20:00:44</p>
+                                <div class="actors-botton-container">
+                                    <p class="actors-name">{actor.name}</p>
+                                    <p class="actors-character">{actor.character}</p>
+                                </div>
                             </div>
-                            <p className='"review-comment'>comentar</p>
-
-                        </div>
-
-
-                    </div>
+                        ))}
+                    </Slider>
                 </div>
-            </section> */}
+            </section>
 
 
 
+            <section className="recommendations">
+                <h1 className="title-recommendations">Similar:</h1>
 
+
+                <div className="recommendations-content">
+
+
+                    {recommendations && recommendations.length > 0 && (
+                        <Slider {...RecomendetionsSlider}>
+                            {recommendations.map((rekom) => (
+                                <div key={rekom.id} className="recommendations-card">
+                                    <div className="recommendations-top">
+                                        <NavLink to={`/movies/${rekom.id}`}>
+                                            <img src={rekom?.backdrop_path ? `https://www.themoviedb.org/t/p/w300_and_h450_multi_faces/${rekom.poster_path}` : Mising} className="recommendationscards-img" alt="" />
+                                        </NavLink>
+                                    </div>
+
+                                    <div className="recommendations-bottom">
+                                        <p className="recommendations-movie-name">{rekom.title}</p>
+                                        <p className="movie-rating">Rating: {rekom.vote_average}</p>
+                                        <span className="recommendations-icon-favorit"> <AiOutlineHeart /></span>
+                                        <button className="recommendations-add-watchlist">Add Watchlist</button>
+                                    </div>
+                                </div>
+                            ))}
+                        </Slider>
+
+                    )}
+                </div>
+            </section>
         </div>
     )
 }
