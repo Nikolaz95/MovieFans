@@ -1,0 +1,47 @@
+
+.cr-acc {
+    margin: 20px;
+    padding: 50px 0;
+    border: 1px solid black;
+    min-height: 80vh;
+}
+
+.title-account {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.content-accountcard {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    flex-direction: column;
+
+}
+
+
+.account-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 20px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+.singIn {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.arow-singin {
+    font-size: 20px;
+}

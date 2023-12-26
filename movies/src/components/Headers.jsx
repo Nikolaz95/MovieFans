@@ -63,7 +63,7 @@ const Headers = () => {
                         </li>
 
                         {/* <li>
-                            <NavLink to="/tvShows">
+                            <NavLink to="/tvshows">
                                 TV Shows
                             </NavLink>
                         </li> */}
@@ -77,6 +77,12 @@ const Headers = () => {
                         <li>
                             <NavLink to="/logIn">
                                 Register /Log in
+                            </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/profile">
+                                Your Profile name
                             </NavLink>
                         </li>
 

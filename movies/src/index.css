@@ -4,6 +4,7 @@
     margin: 0px; 
     padding: 0px; 
     box-sizing: border-box; 
+    
   } 
 
  /*  body {
@@ -89,6 +90,7 @@
 
   .navbar ul{
     display: flex;
+    align-items: center;
   }
 
   .navbar ul li {
@@ -113,6 +115,13 @@
   .navbar ul li a:not(.active):hover {
     background-color: yellowgreen;
   }
+
+  /* profile your name btn */
+
+  .Profile-btn {
+    color: white;
+  }
+
 
 
    .ham-menu {

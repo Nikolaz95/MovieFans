@@ -6,7 +6,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { NavLink, Link } from 'react-router-dom';
 
 /* import css */
-import './Movies.css';
+import '../pages/Movies.css';
 
 /* icon */
 import { AiOutlineHeart } from "react-icons/ai";

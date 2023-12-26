@@ -8,6 +8,7 @@
     margin: 20px;
     padding: 50px 0;
     border: 1px solid black;
+    min-height: 80vh;
   }
   
   .title-registering {
@@ -51,8 +52,12 @@
   
   
   .right-registering {
+    display: flex;
     border: 1px solid black;
     padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
   
   .create-acc {

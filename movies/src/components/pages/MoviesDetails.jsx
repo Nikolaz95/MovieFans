@@ -6,13 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { NavLink, Link } from 'react-router-dom';
 
-
-
-
-import OverPoster from '../assets/pictures/im.jpg'
-import Poster from '../assets/pictures/im-poster.jpg'
-import Actor from '../assets/pictures/Tom-Cruise.jpg'
-import Mising from '../assets/pictures/mising-pic.jpg';
+import Mising from '../../assets/pictures/mising-pic.jpg';
 
 
 

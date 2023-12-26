@@ -6,14 +6,17 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from './App.jsx'
 import './index.css'
-import Movies from './pages/Movies.jsx';
 import Root from './components/Root.jsx';
-import TvShows from './pages/TvShows.jsx';
-import Registering from './pages/Registering.jsx';
-import Content from './pages/Content.jsx';
-import MoviesDetails from './pages/MoviesDetails.jsx';
-import Search from './pages/Search.jsx';
-import CreateAccount from './pages/CreateAccount.jsx';
+import Content from './components/pages/Content.jsx';
+import Movies from './components/pages/Movies.jsx';
+import TvShows from './components/pages/TvShows.jsx';
+import MoviesDetails from './components/pages/MoviesDetails.jsx';
+import Search from './components/pages/Search.jsx';
+import Registering from './components/auth/Registering.jsx';
+import CreacteAccoutn from './components/auth/CreateAccount.jsx';
+import ProfileAccount from './components/pages/Profile/ProfileAccount.jsx';
+
+
 
 
 const router = createBrowserRouter([
@@ -41,10 +44,8 @@ const router = createBrowserRouter([
         element: <Search />
       },
 
-
-
       {
-        path: "/tvShows",
+        path: "/tvshows",
         element: <TvShows />
       },
 
@@ -55,7 +56,14 @@ const router = createBrowserRouter([
 
       {
         path: "/accoutn",
-        element: <CreateAccount />
+        element: <CreacteAccoutn />
+      },
+
+      ,
+
+      {
+        path: "/profile",
+        element: <ProfileAccount />
       },
 
     ]

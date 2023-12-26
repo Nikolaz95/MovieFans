@@ -9,7 +9,7 @@ import { NavLink, Link } from 'react-router-dom';
 /* css style */
 import './Search.css';
 
-import Mising from '../assets/pictures/mising-pic.jpg';
+
 
 
 /* icon */

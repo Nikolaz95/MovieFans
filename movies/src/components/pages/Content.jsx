@@ -3,17 +3,14 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom';
 
-import styled from "styled-components"
-import Slider from "react-slick";
-
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-import MovieTheater from './MovieTheater';
-import MovieUpcoming from './MovieUpcoming';
-import MovieTopRated from './MovieTopRated';
+import MovieTheater from '../pages/MovieTheater';
+import MovieUpcoming from '../pages/MovieUpcoming';
+import MovieTopRated from '../pages/MovieTopRated';
 
 
 const Content = () => {
