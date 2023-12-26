@@ -53,16 +53,16 @@ const Headers = () => {
                 </NavLink>
 
 
-                <div className={`navbar ${isSideMenuOpen ? 'active' : ''}`} >
+                <div className={`navbar ${isSideMenuOpen ? 'active' : 'close'}`} >
                     <ul>
 
-                        {/*  <li>
+                        <li>
                             <NavLink to="/movies">
                                 Movies
                             </NavLink>
                         </li>
 
-                        <li>
+                        {/* <li>
                             <NavLink to="/tvShows">
                                 TV Shows
                             </NavLink>

@@ -190,7 +190,8 @@ const MoviesDetails = () => {
 
             <div className="over-poster">
                 <div className="img-overposter bg-gradient-to-t from-black">
-                    <img className="object-cover size-img movie__backdrop" src={data?.backdrop_path ? `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${data.poster_path}` : Mising} alt="sadasd" />
+                    <img className="object-cover size-img movie__backdrop" src={data?.backdrop_path ? `https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${data.poster_path}` : Mising} alt="sadasd"
+                    />
                 </div>
             </div>
 

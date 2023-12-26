@@ -7,13 +7,60 @@
     padding: 50px 0;
   }
   
-  .all-moviestitle {
+  .category-title {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0  50px;
   }
-  
+
+  .dropdown-menu {
+    width: 100%;
+    padding: 17px 15px;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+    border-radius: 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.showDrop {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 17px;
+  width: 244.45px;
+  cursor: pointer;
+  font-size: 20px;
+  gap: 10px;
+  align-items: center;
+  position: absolute;
+  top: 276px; 
+  right: 49px;
+  background-color: white;
+}
+
+.showDrop option:hover {
+  font-size: 20px;
+  background-color: yellowgreen;
+}
+
+.arrowDrp {
+  transition:  0.5s;
+}
+
+.rotatedArrow {
+  transform: rotate(180deg);
+}
+
+
+
+.region:hover {
+  background-color: aquamarine;
+}
   
   .allmovies-content {
     display: grid;
@@ -24,10 +71,18 @@
   }
   
   .allmovies-card {
-    justify-content: center;
+    display: flex;
     padding: 20px;
     border-radius: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    font-size: 20px;
+    text-align: center;
   }
   
   
