@@ -15,6 +15,10 @@ import Search from './components/pages/Search.jsx';
 import Registering from './components/auth/Registering.jsx';
 import CreacteAccoutn from './components/auth/CreateAccount.jsx';
 import ProfileAccount from './components/pages/Profile/ProfileAccount.jsx';
+import WatchList from './components/pages/Profile/WatchList.jsx';
+import FavoritList from './components/pages/Profile/FavoritList.jsx';
+import Update from './components/pages/Profile/Update.jsx';
+import FavActors from './components/pages/Profile/FavActors.jsx';
 
 
 
@@ -59,11 +63,28 @@ const router = createBrowserRouter([
         element: <CreacteAccoutn />
       },
 
-      ,
-
       {
         path: "/profile",
         element: <ProfileAccount />
+      },
+
+      {
+        path: "/watchList",
+        element: <WatchList />
+      },
+
+      {
+        path: "/favoritMovieTvShowList",
+        element: <FavoritList />
+      },
+      {
+        path: "/favoritActor",
+        element: <FavActors />
+      },
+
+      {
+        path: "/update",
+        element: <Update />
       },
 
     ]

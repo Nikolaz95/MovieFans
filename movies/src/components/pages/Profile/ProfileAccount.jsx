@@ -1,46 +1,23 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+/* import { NavLink } from 'react-router-dom'; */
 
 
 /* css style */
 import '../Profile/ProfileAccount.css';
 
 import Profile from '../../../assets/pictures/avatar-profile.jpg';
+import NavLinProfileAccount from './NavLinProfileAccount';
 
 const ProfileAccount = () => {
     return (
         <div className="content-Profile">
             <h1>Profile Account</h1>
 
-            <div className="profile-navigation">
-                <li>
-                    <NavLink to="#">
-                        Your profile
-                    </NavLink>
-                </li>
-
-                <li>
-                    <NavLink to="#">
-                        Your watch list
-                    </NavLink>
-                </li>
-
-                <li>
-                    <NavLink to="#">
-                        Your favorit
-                    </NavLink>
-                </li>
-
-                <li>
-                    <NavLink to="#">
-                        Update Profile
-                    </NavLink>
-                </li>
-            </div>
+            <NavLinProfileAccount />
 
             <div className="account-content">
                 <div className="accoutn-profileImg">
-                    <img src={Profile} height={300} width={300} alt="Person" class="" />
+                    <img src={Profile} height={300} width={300} alt="Person" className="Profileimg" />
                 </div>
 
                 <div className="account-info">

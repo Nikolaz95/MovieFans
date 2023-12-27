@@ -1,0 +1,82 @@
+.content-favActors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    min-height: 80vh;
+}
+
+.favactors-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+    margin: 40px 30px;
+}
+
+.favactors-card {
+    display: flex;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.favactors-img {
+    border-radius: 20px;
+    height: 400px;
+    cursor: pointer;
+    width: 350px;
+}
+
+.favactors-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+    gap: 10px;
+}
+
+.favactors-name, .favactors-rating,  .favactors-favorit {
+    font-size: 23px;
+}
+
+.favactors-addrmv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.favactors-btnadd {
+    background: linear-gradient(to bottom, #12a2b5 5%, #378591 100%);
+    background-color: #12a2b5;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.favactors-btnrmv {
+    background: linear-gradient(to bottom, #ec0a0a 5%, #91373b 100%);
+    background-color: #ff0a0a;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+}
