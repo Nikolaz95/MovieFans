@@ -19,6 +19,7 @@ import WatchList from './components/pages/Profile/WatchList.jsx';
 import FavoritList from './components/pages/Profile/FavoritList.jsx';
 import Update from './components/pages/Profile/Update.jsx';
 import FavActors from './components/pages/Profile/FavActors.jsx';
+import ActorsPage from './components/pages/ActorsPage.jsx';
 
 
 
@@ -51,6 +52,12 @@ const router = createBrowserRouter([
       {
         path: "/tvshows",
         element: <TvShows />
+      },
+      ,
+
+      {
+        path: "/actors/:id",
+        element: <ActorsPage />
       },
 
       {

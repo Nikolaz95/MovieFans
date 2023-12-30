@@ -1,0 +1,120 @@
+
+
+section {
+    padding: 50px 0;
+}
+
+.actorsPAge-content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 50px 30px;
+}
+
+
+.Actors-left {
+    display: flex;
+    flex-direction: column;
+    /* border:  1px solid black; */
+}
+
+.details-Actors {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.Actors-img {
+  height: 600px;
+  width: 500px;
+}
+
+.Actors-biography {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 30px;
+  /* border: 1px solid black; */
+}
+
+
+
+.Actors-biography p {
+    padding: 15px 0;
+    font-size: 25px;
+
+}
+
+
+/* filmovi glumca */
+
+
+.title-Actors {
+  padding: 20px;
+}
+
+.Actors-rightBottom {
+  gap: 50px;
+  padding: 50px 30px;
+  margin: 10px;
+  /* border: 1px solid black; */
+}
+
+.Actorsmovies-card {
+    min-height: 550px;
+  max-width: 269px;
+  border-radius: 20px;
+  border: 1px solid black;
+}
+
+.Actorsmovies-img {
+    border-radius: 20px;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.Actorsmovies-bottom {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  gap: 10px;
+}
+
+.Actorsmovies-name, .Actorsmovies-rating, .Actorsmoviesicon-favorit {
+    font-size: 20px;
+}
+
+
+.ActorsmoviesAdd-watchlist {
+    background:linear-gradient(to bottom, #12a2b5 5%, #378591 100%);
+  background-color:#12a2b5;
+  border-radius:20px;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px;
+  text-decoration:none;
+}
+
+.ActorsmoviesAdd-watchlist:hover {
+    background:linear-gradient(to bottom, #378591 5%, #12a2b5 100%);
+  background-color:#378591;
+}
+
+
+.ActorsmoviesAdd-watchlist:active {
+    position:relative;
+  top:1px;
+}
+
+
+
+

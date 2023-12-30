@@ -90,7 +90,7 @@ const MoviesDetails = () => {
 
 
 
-    /* funckija za slider */
+    /* funckija za slider RecomendetionsSlider*/
 
 
 
@@ -212,10 +212,6 @@ const MoviesDetails = () => {
 
                         <div className='movie-genres'>
 
-                            {/* <span className="movie-genre">Action</span>
-                            <span className="movie-genre">Action</span>
-                            <span className="movie-genre">Action</span> */}
-
                             {
                                 data?.genres.map((genre) => (
                                     <span className='movie-genre' key={genre.id}>
@@ -257,7 +253,9 @@ const MoviesDetails = () => {
                     <Slider {...ActorsSlider}>
                         {credits?.cast?.map(actor => (
                             <div key={actor.id} class="actors-card">
-                                <img src={`https://image.tmdb.org/t/p/w185/${actor.profile_path}`} alt="Person" class="actors-img" />
+                                <NavLink to={`/actors/${actor.id}`}>
+                                    <img src={`https://image.tmdb.org/t/p/w185/${actor.profile_path}`} alt="Person" class="actors-img" />
+                                </NavLink>
 
                                 <div class="actors-botton-container">
                                     <p class="actors-name">{actor.name}</p>

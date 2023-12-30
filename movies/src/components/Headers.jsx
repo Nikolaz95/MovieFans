@@ -74,6 +74,12 @@ const Headers = () => {
                             </NavLink>
                         </li>
 
+                        {/* <li>
+                            <NavLink to="/actorsPage">
+                                Actors
+                            </NavLink>
+                        </li> */}
+
                         <li>
                             <NavLink to="/logIn">
                                 Register /Log in
