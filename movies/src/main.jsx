@@ -13,7 +13,7 @@ import TvShows from './components/pages/TvShows.jsx';
 import MoviesDetails from './components/pages/MoviesDetails.jsx';
 import Search from './components/pages/Search.jsx';
 import Registering from './components/auth/Registering.jsx';
-import CreacteAccoutn from './components/auth/CreateAccount.jsx';
+import CreateAccount from './components/auth/CreateAccount.jsx';
 import ProfileAccount from './components/pages/Profile/ProfileAccount.jsx';
 import WatchList from './components/pages/Profile/WatchList.jsx';
 import FavoritList from './components/pages/Profile/FavoritList.jsx';
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
 
       {
         path: "/createAccoutn",
-        element: <CreacteAccoutn />
+        element: <CreateAccount />
       },
 
       {

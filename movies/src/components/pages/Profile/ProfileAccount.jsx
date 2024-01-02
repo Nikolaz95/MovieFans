@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import NavLinProfileAccount from './NavLinProfileAccount';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { useLocation } from 'react-router-dom';
 
 
 /* css style */
@@ -9,6 +9,8 @@ import '../Profile/ProfileAccount.css';
 import Profile from '../../../assets/pictures/avatar-profile.jpg';
 
 const ProfileAccount = () => {
+    const location = useLocation();
+    const { userName } = location.state || {};
     return (
         <div className="content-Profile">
             <h1>Profile Account</h1>
@@ -22,7 +24,7 @@ const ProfileAccount = () => {
 
                 <div className="account-info">
                     <p>Your Account Name:</p>
-                    <p>Nikola</p>
+                    <p>{userName}</p>
                 </div>
             </div>
         </div>
