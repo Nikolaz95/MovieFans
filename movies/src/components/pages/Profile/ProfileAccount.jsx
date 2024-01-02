@@ -1,12 +1,12 @@
-import React from 'react'
-/* import { NavLink } from 'react-router-dom'; */
+import React, { useEffect, useState } from 'react'
+import NavLinProfileAccount from './NavLinProfileAccount';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 
 /* css style */
 import '../Profile/ProfileAccount.css';
 
 import Profile from '../../../assets/pictures/avatar-profile.jpg';
-import NavLinProfileAccount from './NavLinProfileAccount';
 
 const ProfileAccount = () => {
     return (
@@ -21,8 +21,8 @@ const ProfileAccount = () => {
                 </div>
 
                 <div className="account-info">
-                    <p>Your User name:</p>
-                    <p>JOE</p>
+                    <p>Your Account Name:</p>
+                    <p>Nikola</p>
                 </div>
             </div>
         </div>

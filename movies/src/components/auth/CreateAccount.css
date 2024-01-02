@@ -45,3 +45,40 @@
 .arow-singin {
     font-size: 20px;
 }
+
+
+.create-accBtn {
+    width: 100%;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(232, 238, 65);
+    border-radius: 20px;
+}
+
+
+
+/* text validation */
+.username-sucCr, .email-sucCr, .passw-sucCr {
+    display: none;
+    padding: 2px;
+    background-color: yellowgreen;
+    font-size: 25px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+  }
+
+  .username-errorCr, .email-errorCr, .passw-errorCr {
+    display: none;
+    padding: 2px;
+    background-color: red;
+    font-size: 25px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+  }
+
+

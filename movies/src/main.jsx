@@ -66,7 +66,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/accoutn",
+        path: "/createAccoutn",
         element: <CreacteAccoutn />
       },
 

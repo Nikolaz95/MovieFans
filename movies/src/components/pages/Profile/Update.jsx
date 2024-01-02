@@ -1,11 +1,15 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react'
+import { getAuth, updateProfile, updatePassword, deleteUser } from 'firebase/auth';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import NavLinProfileAccount from './NavLinProfileAccount';
+
 
 
 /* css style */
 import '../Profile/Update.css';
-import NavLinProfileAccount from './NavLinProfileAccount';
 import Profile from '../../../assets/pictures/avatar-profile.jpg';
+
+// icon react js
 import { MdAddAPhoto } from "react-icons/md";
 
 
@@ -25,26 +29,30 @@ const Update = () => {
 
                 <form action="" className='form-updateProfile'>
                     <label>Your Account Name: <br />
-                        <input type="text" placeholder='account name...' />
-                    </label>
-
-                    <label>Old Password: <br />
-                        <input type="password" placeholder='old password...' />
+                        <input type="text"
+                            placeholder='account name...' />
                     </label>
 
                     <label>New Password: <br />
-                        <input type="password" placeholder='new password...' />
+                        <input type="password"
+                            placeholder='new password...' />
+                    </label>
+                    <label>Old Password: <br />
+                        <input type="password"
+                            placeholder='old password...' />
                     </label>
 
-                    <label>Confirm Password: <br />
-                        <input type="password" placeholder='confirm password...' />
+
+                    <label>Confirm New Password: <br />
+                        <input type="password"
+                            placeholder='confirm new password...' />
                     </label>
 
                 </form>
 
                 <div className="buttons-update">
-                    <button>Save update</button>
-                    <button>Delete account</button>
+                    <button className="buttons-save" >Save update</button>
+                    <button className="buttons-delete" >Delete account</button>
                 </div>
             </div>
         </div>

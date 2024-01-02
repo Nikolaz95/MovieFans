@@ -6,9 +6,38 @@ import { BsSearch } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 
 
+import Profile from '../assets/pictures/avatar-profile.jpg';
+
+//icon import 
+import { IoPersonCircleSharp } from "react-icons/io5";
+
+
+
+
 const Headers = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [userName, setUserName] = useState('');
+    const handleLogin = () => {
+        // Perform login actions, set isAuthenticated to true
+        setIsAuthenticated(true);
+    };
+
+    const handleLogout = () => {
+        // Perform logout actions, set isAuthenticated to false
+        setIsAuthenticated(false);
+        setDropDown(false); // Close the dropdown on logout
+    };
 
     const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+
+    const [dropDown, setDropDown] = useState(false);
+
+    const toggleDropDown = () => {
+        console.log('Toggling side menu');
+        setDropDown(!dropDown);
+    };
+
+
 
     const toggleSideMenu = () => {
         console.log('Toggling side menu');
@@ -17,6 +46,19 @@ const Headers = () => {
 
     useEffect(() => {
         const closeMenuOnOutsideClick = (e) => {
+            if (dropDown) {
+                const dropdownWrapper = document.querySelector('.dropdown-wrapper');
+                const dropdownContent = document.querySelector('.dropdown-content');
+
+                if (
+                    dropdownWrapper &&
+                    dropdownContent &&
+                    !e.target.closest('.dropdown-wrapper') &&
+                    !e.target.closest('.dropdown-content')
+                ) {
+                    setDropDown(false);
+                }
+            }
             if (isSideMenuOpen) {
                 if (!e.target.closest('.navbar') && !e.target.closest('.ham-menu')) {
                     setIsSideMenuOpen(false);
@@ -40,7 +82,7 @@ const Headers = () => {
         return () => {
             document.removeEventListener('click', closeMenuOnOutsideClick);
         };
-    }, [isSideMenuOpen]);
+    }, [dropDown, isSideMenuOpen]);
 
 
     return (
@@ -80,21 +122,40 @@ const Headers = () => {
                             </NavLink>
                         </li> */}
 
-                        <li>
+                        {/* <li>
                             <NavLink to="/logIn">
                                 Register /Log in
                             </NavLink>
-                        </li>
+                        </li> */}
+
+
 
                         <li>
-                            <NavLink to="/profile">
-                                Your Profile name
-                            </NavLink>
+                            {isAuthenticated ? (
+                                <div className="dropdown-wrapper">
+                                    <div onClick={toggleDropDown} /* className='dropdown-conteiner' */>
+                                        <NavLink to="#">
+                                            <IoPersonCircleSharp /> {userName}
+                                        </NavLink>
+                                    </div>
+
+                                    {dropDown && (
+                                        <div className="dropdown-content">
+                                            <NavLink to="/profile">Profile Account</NavLink>
+                                            <NavLink to="/watchList">Your Wathlist</NavLink>
+                                            <NavLink to="/favoritMovieTvShowList">Your Favorit</NavLink>
+                                            <NavLink to="/update">Settings</NavLink>
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <NavLink to="/logIn">Register / Log in</NavLink>
+                            )}
+
                         </li>
 
                     </ul>
                 </div>
-
                 <div className={`ham-menu ${isSideMenuOpen ? 'active' : ''}`} onClick={toggleSideMenu}>
                     <span className="bar1"></span>
                     <span className="bar2"></span>

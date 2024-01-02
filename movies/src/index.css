@@ -143,6 +143,33 @@
    }
 
 
+     /* dropdown */
+
+
+  .dropdown-wrapper {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    border-radius: 30px;
+   /*  text-align: center; */
+    top: 68px;
+    left: -41px;
+    width: 186px;
+    background-color:  rgb(20, 239, 247);;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .dropdown-content {
+    display: block;
+  }
+  
+
+
+
    /* responsive navbar styling */
 
  @media  screen and (max-width: 1300px) {
@@ -157,7 +184,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+
 
   /* nav mob */
 

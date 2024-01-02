@@ -1,9 +1,13 @@
 
 
 
-import React from 'react'
-import { NavLink, Link } from 'react-router-dom';
+import React, { useState } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase-config/firebaseConfig';
 
+
+// css import
 
 import './Registering.css';
 
@@ -18,12 +22,30 @@ const Registering = () => {
             <div className="card-registering">
 
                 <div className="lef-registering">
-                    <form action="" className='form-registering'>
-                        <label htmlFor="name">User name :</label>
-                        <input type="text" id='name' placeholder='username...' /> <br />
+                    <form className='form-registering'>
+                        <label htmlFor="name">Your username:</label>
+                        <input
+                            type="text"
+                            id='name'
+                            placeholder='username...' />
+                        <p className="username-suc">Your username is valid</p>
+                        <p className="username-error">Your username is not valid</p><br />
+                        <label htmlFor="mail">Your Emai:</label>
+                        <input
+                            type="email"
+                            id='mail'
+                            placeholder='email...' />
+                        <p className="email-suc">Your email is valid</p>
+                        <p className="email-error">Your email is not valid</p><br />
 
-                        <label htmlFor="pwd">password :</label>
-                        <input type="password" id='pwd' placeholder='password...' />
+
+                        <label htmlFor="pwd">Password :</label>
+                        <input
+                            type="password"
+                            id='pwd'
+                            placeholder='password...'
+                        /><p className="passw-suc">Your password is valid</p>
+                        <p className="passw-error">Your password is not valid</p>
                         <div className="btn-login">
                             <button className="login">Log in</button>
                         </div>
@@ -35,7 +57,7 @@ const Registering = () => {
                     </div>
 
 
-                    <NavLink to="/accoutn">
+                    <NavLink to="/createAccoutn">
                         <div className="btn-registering">
                             <button className="create-acc">Create a New Accoutn</button>
                         </div>

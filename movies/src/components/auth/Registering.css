@@ -38,18 +38,36 @@
   .form-registering {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 10px;
   }
 
+  label,input  {
+    font-size: 25px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
   .login {
     width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 0);
+    font-weight: bold;
+    font-size: 20px;
   }
+
+
 
   .divider-text {
     text-align: center;
   }
   
+  
+    .btn-registering {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
   
   .right-registering {
     display: flex;
@@ -63,4 +81,35 @@
   .create-acc {
     border: 1px solid black;
     padding: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    background-color: yellowgreen;
+    border-radius: 20px;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+
+  /* text validation */
+  .username-suc, .email-suc, .passw-suc {
+    display: none;
+    padding: 2px;
+    background-color: yellowgreen;
+    font-size: 25px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+  }
+
+  .username-error, .email-error, .passw-error {
+    display: none;
+    padding: 2px;
+    background-color: red;
+    font-size: 25px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
   }
