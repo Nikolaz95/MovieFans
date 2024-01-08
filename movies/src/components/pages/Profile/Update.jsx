@@ -53,6 +53,7 @@ const Update = () => {
                 <div className="buttons-update">
                     <button className="buttons-save" >Save update</button>
                     <button className="buttons-delete" >Delete account</button>
+                    <button className="buttons-lgout" >Log Out</button>
                 </div>
             </div>
         </div>

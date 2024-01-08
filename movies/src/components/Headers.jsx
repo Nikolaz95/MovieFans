@@ -1,9 +1,8 @@
 
 
 import React, { useState, useEffect } from 'react'
-import { BsSearch } from 'react-icons/bs';
-
 import { NavLink } from 'react-router-dom';
+import { auth } from './config/Firebase-Config';
 
 
 import Profile from '../assets/pictures/avatar-profile.jpg';
@@ -15,25 +14,14 @@ import { IoPersonCircleSharp } from "react-icons/io5";
 
 
 const Headers = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [userName, setUserName] = useState('');
-    const handleLogin = () => {
-        // Perform login actions, set isAuthenticated to true
-        setIsAuthenticated(true);
-    };
-
-    const handleLogout = () => {
-        // Perform logout actions, set isAuthenticated to false
-        setIsAuthenticated(false);
-        setDropDown(false); // Close the dropdown on logout
-    };
 
     const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-
     const [dropDown, setDropDown] = useState(false);
+    const [userName, setUserName] = useState('');
+    const [unsubscribe, setUnsubscribe] = useState(null);
 
     const toggleDropDown = () => {
-        console.log('Toggling side menu');
+        console.log('Toggling dropdown');
         setDropDown(!dropDown);
     };
 
@@ -66,10 +54,10 @@ const Headers = () => {
                 } else {
 
                 }
-                document.querySelector(".content-body").classList.add("content_body_top_30");
+                document.querySelector(".content-body").className.add("content_body_top_30");
 
             } else {
-                document.querySelector(".content-body").classList.remove("content_body_top_30");
+                document.querySelector(".content-body").className.remove("content_body_top_30");
 
             }
 
@@ -84,6 +72,31 @@ const Headers = () => {
         };
     }, [dropDown, isSideMenuOpen]);
 
+
+    /* user name */
+    useEffect(() => {
+        const updateUserName = () => {
+            const user = auth.currentUser;
+            if (user) {
+                setUserName(user.displayName || '');
+            }
+        };
+
+        // Add an observer to listen for authentication state changes
+        const authObserver = auth.onAuthStateChanged(updateUserName);
+
+        // Set the unsubscribe function in the state
+        setUnsubscribe(() => authObserver);
+
+        // Call the function to get the initial user name
+        updateUserName();
+
+        // Clean up the observer when the component unmounts
+        return () => {
+            authObserver(); // invoke the observer to unsubscribe
+        };
+    }, []);
+    console.log(userName)
 
     return (
         <header>
@@ -122,35 +135,32 @@ const Headers = () => {
                             </NavLink>
                         </li> */}
 
-                        {/* <li>
+                        <li>
                             <NavLink to="/logIn">
                                 Register /Log in
                             </NavLink>
-                        </li> */}
+                        </li>
 
 
 
                         <li>
-                            {isAuthenticated ? (
-                                <div className="dropdown-wrapper">
-                                    <div onClick={toggleDropDown} /* className='dropdown-conteiner' */>
-                                        <NavLink to="#">
-                                            <IoPersonCircleSharp /> {userName}
-                                        </NavLink>
-                                    </div>
 
-                                    {dropDown && (
-                                        <div className="dropdown-content">
-                                            <NavLink to="/profile">Profile Account</NavLink>
-                                            <NavLink to="/watchList">Your Wathlist</NavLink>
-                                            <NavLink to="/favoritMovieTvShowList">Your Favorit</NavLink>
-                                            <NavLink to="/update">Settings</NavLink>
-                                        </div>
-                                    )}
+                            <div className="dropdown-wrapper">
+                                <div onClick={toggleDropDown} className='dropdown-conteiner'>
+                                    <NavLink to="#">
+                                        <IoPersonCircleSharp />{userName}
+                                    </NavLink>
                                 </div>
-                            ) : (
-                                <NavLink to="/logIn">Register / Log in</NavLink>
-                            )}
+
+                                {dropDown && (
+                                    <div className="dropdown-content">
+                                        <NavLink to="/profile">Profile Account</NavLink>
+                                        <NavLink to="/watchList">Your Wathlist</NavLink>
+                                        <NavLink to="/favoritMovieTvShowList">Your Favorit</NavLink>
+                                        <NavLink to="/update">Settings</NavLink>
+                                    </div>
+                                )}
+                            </div>
 
                         </li>
 

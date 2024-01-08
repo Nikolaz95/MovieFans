@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { auth } from '../config/Firebase-Config';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,19 +17,27 @@ import './CreateAccount.css';
 export const CreateAccount = () => {
 
     const navigate = useNavigate();
+    const [accountName, setAccountName] = useState("");
     const [creatEmail, setCreatEmail] = useState("");
     const [creattPassword, setCreatPassword] = useState("");
+
+    console.log(auth?.currentUser?.accountName)
+    console.log(auth?.currentUser?.creatEmail)
 
 
     const createAcc = async (e) => {
         e.preventDefault()
         try {
             /* const userCredential = */
-            await createUserWithEmailAndPassword(
+            const userCredential = await createUserWithEmailAndPassword(
                 auth,
                 creatEmail,
                 creattPassword
             );
+
+            // Update user profile with additional information (accountName)
+            const user = userCredential.user;
+            await updateProfile(user, { displayName: accountName });
             // Redirect to the profile page after successful account creation
             navigate('/profile');
             /* const user = userCredential.user; */
@@ -49,14 +57,15 @@ export const CreateAccount = () => {
             <div className="content-accountcard">
                 <div className="account-card">
                     <form className='form-registering' >
-                        {/* <label htmlFor="name">Your name :</label>
+                        <label htmlFor="name">Your Username:</label>
                         <input
                             type="text"
                             id='name'
                             placeholder='username...'
+                            onChange={(event) => setAccountName(event.target.value)}
                         /> <br />
                         <p className="username-sucCr">Your username is valid</p>
-                        <p className="username-errorCr">Your username is not valid</p> */}
+                        <p className="username-errorCr">Your username is not valid</p>
                         <label htmlFor="mail">Your Emai:</label>
                         <input
                             type="email"

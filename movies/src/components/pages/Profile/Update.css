@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     width: 900px;
-    height: 1000px;
+    height: 1050px;
     background-color: white;
     border: 1px solid black;
     border-radius: 15px;
@@ -69,6 +69,15 @@ label,input  {
 .buttons-delete {
     font-size: 25px;
     background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+
+.buttons-lgout {
+    font-size: 25px;
+    background-color: rgb(44, 131, 225);
     border-radius: 10px;
     padding: 10px;
     color: white;
