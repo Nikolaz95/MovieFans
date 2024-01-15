@@ -1,15 +1,4 @@
-import React, { createContext } from 'react'
-
-const AuthContext = createContext();
-
-const initialState = {
-    isAuthenticated: false,
-    user: null,
-}
-
-const authReducer = (state, action) => {
-    swi
-}
+import React from 'react'
 
 const AppProvider = () => {
     return (
