@@ -6,12 +6,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-/* styling components */
-import styled from "styled-components"
 
 
 /* css style */
-import './MovieTopRated.css';
+import './MovieTheater.css';
 
 
 /* icon */
@@ -33,7 +31,7 @@ function Arrow(props) {
 const MovieTheater = () => {
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 5,
@@ -50,7 +48,7 @@ const MovieTheater = () => {
                     slidesToScroll: 1,
                     initialSlide: 0,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
 
@@ -61,7 +59,7 @@ const MovieTheater = () => {
                     slidesToScroll: 1,
                     initialSlide: 0,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
 
@@ -72,7 +70,7 @@ const MovieTheater = () => {
                     slidesToScroll: 1,
                     initialSlide: 0,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
 
@@ -83,7 +81,7 @@ const MovieTheater = () => {
                     slidesToScroll: 1,
                     initialSlide: 0,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
 
@@ -94,7 +92,7 @@ const MovieTheater = () => {
                     slidesToScroll: 1,
                     initialSlide: 0,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
 
@@ -105,7 +103,7 @@ const MovieTheater = () => {
                     slidesToScroll: 1,
                     initialSlide: 0,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
 
@@ -115,6 +113,8 @@ const MovieTheater = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 0,
+                    infinite: true,
+                    dots: false
                 }
             },
             {
@@ -123,6 +123,20 @@ const MovieTheater = () => {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     initialSlide: 0,
+                    infinite: true,
+                    dots: false,
+                    Arrow: false
+                }
+            },
+            {
+                breakpoint: 320,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    initialSlide: 0,
+                    infinite: true,
+                    dots: false,
+                    Arrow: false
                 }
             }
         ]
@@ -154,28 +168,25 @@ const MovieTheater = () => {
 
     return (
 
-        <div className="card-container">
-
-            <Slider {...settings}>
-                {movies.map((movie) => (
-                    <div key={movie.id} className="card">
-                        <div className="cards-content">
-                            <div className="card-top">
-                                <NavLink to={`/movies/${movie.id}`}>
-                                    <img className="cards-img" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt="" />
-                                </NavLink>
-                            </div>
-                            <div className="card-bottom">
-                                <p className="movie-name">{movie.title}</p>
-                                <p className="movie-rating">Rating: {movie.vote_average}</p>
-                                <span className="icon-favorit"> <AiOutlineHeart /></span>
-                                <button className="add-watchlist">Add Watchlist</button>
-                            </div>
+        <Slider {...settings}>
+            {movies.map((movie) => (
+                <div key={movie.id} className="card">
+                    <div className="cards-content">
+                        <div className="card-top">
+                            <NavLink to={`/movies/${movie.id}`}>
+                                <img className="cards-img" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`} alt="" />
+                            </NavLink>
+                        </div>
+                        <div className="card-bottom">
+                            <p className="movie-name">{movie.title}</p>
+                            <p className="movie-rating">Rating: {movie.vote_average}</p>
+                            <span className="icon-favorit"> <AiOutlineHeart /></span>
+                            <button className="add-watchlist">Add Watchlist</button>
                         </div>
                     </div>
-                ))}
-            </Slider>
-        </div>
+                </div>
+            ))}
+        </Slider>
     );
 };
 

@@ -93,7 +93,7 @@ const Movies = () => {
                     <div key={movie.id} className={`allmovies-card ${selectedCategory}`}>
                         <div className="allmovies-cardtop">
                             <NavLink to={`/movies/${movie.id}`}>
-                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" className="cards-img" />
+                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" className="allmoviescards-img" />
                             </NavLink>
                         </div>
                         <div className="card-bottom">

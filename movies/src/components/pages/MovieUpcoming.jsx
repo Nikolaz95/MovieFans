@@ -8,11 +8,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 /* css style */
-import './MovieUpcoming.css';
+import './MovieTheater.css';
 
 
-/* styling components */
-import styled from "styled-components"
 
 
 /* icon */
@@ -33,7 +31,7 @@ const MovieUpcoming = () => {
 
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 5,
@@ -151,30 +149,27 @@ const MovieUpcoming = () => {
     return (
 
 
-        <div className="card-container">
+        <Slider {...settings}>
+            {tvShow.map((tvShows) => (
+                <div key={tvShows.id} className='card'>
+                    <div className="cards-content">
+                        <div className="card-top">
 
-            <Slider {...settings}>
-                {tvShow.map((tvShows) => (
-                    <div key={tvShows.id} className='card'>
-                        <div className="cards-content">
-                            <div className="card-top">
+                            <NavLink to={`/movies/${tvShows.id}`}>
+                                <img className="cards-img" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${tvShows.poster_path}`} alt="" />
+                            </NavLink>
+                        </div>
 
-                                <NavLink to={`/movies/${tvShows.id}`}>
-                                    <img className="cards-img" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${tvShows.poster_path}`} alt="" />
-                                </NavLink>
-                            </div>
-
-                            <div className="card-bottom">
-                                <p className="movie-name">{tvShows.title}</p>
-                                <p className="movie-rating">Rating: {tvShows.vote_average}</p>
-                                <span className="icon-favorit"> <AiOutlineHeart /></span>
-                                <button className="add-watchlist">Add Watchlist</button>
-                            </div>
+                        <div className="card-bottom">
+                            <p className="movie-name">{tvShows.title}</p>
+                            <p className="movie-rating">Rating: {tvShows.vote_average}</p>
+                            <span className="icon-favorit"> <AiOutlineHeart /></span>
+                            <button className="add-watchlist">Add Watchlist</button>
                         </div>
                     </div>
-                ))}
-            </Slider>
-        </div>
+                </div>
+            ))}
+        </Slider>
     );
 };
 

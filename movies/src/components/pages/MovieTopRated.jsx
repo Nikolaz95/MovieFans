@@ -9,10 +9,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 /* css style */
-import './MovieTopRated.css';
+import './MovieTheater.css';
 
-/* styling components */
-import styled from "styled-components"
+
 
 /* icon */
 import { AiOutlineHeart } from "react-icons/ai";
@@ -20,7 +19,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 const MovieTopRated = () => {
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 5,
@@ -158,29 +157,26 @@ const MovieTopRated = () => {
 
 
     return (
-        <div className="card-container">
+        <Slider {...settings}>
+            {topRated.map((topRateds) => (
+                <div key={topRateds.id} className='card'>
+                    <div className="cards-content">
+                        <div className="card-top">
+                            <NavLink to={`/movies/${topRateds.id}`}>
+                                <img className="cards-img" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${topRateds.poster_path}`} alt="" />
+                            </NavLink>
+                        </div>
 
-            <Slider {...settings}>
-                {topRated.map((topRateds) => (
-                    <div key={topRateds.id} className='card'>
-                        <div className="cards-content">
-                            <div className="card-top">
-                                <NavLink to={`/movies/${topRateds.id}`}>
-                                    <img className="cards-img" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${topRateds.poster_path}`} alt="" />
-                                </NavLink>
-                            </div>
-
-                            <div className="card-bottom">
-                                <p className="movie-name">{topRateds.title}</p>
-                                <p className="movie-rating">Rating: {topRateds.vote_average}</p>
-                                <span className="icon-favorit"> <AiOutlineHeart /></span>
-                                <button className="add-watchlist">Add Watchlist</button>
-                            </div>
+                        <div className="card-bottom">
+                            <p className="movie-name">{topRateds.title}</p>
+                            <p className="movie-rating">Rating: {topRateds.vote_average}</p>
+                            <span className="icon-favorit"> <AiOutlineHeart /></span>
+                            <button className="add-watchlist">Add Watchlist</button>
                         </div>
                     </div>
-                ))}
-            </Slider>
-        </div>
+                </div>
+            ))}
+        </Slider>
     )
 }
 

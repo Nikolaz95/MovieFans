@@ -1,21 +1,21 @@
 
 
 
-.card-container {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-}
+
 
 .cards-content {
-    min-height: 550px;
-    max-width: 250px;
+    display: flex;
+    height: 580px;
+    width: 250px;
     border-radius: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 1px solid black;
 }
 
-.cards-img {
+.cards-img img{
     border-radius: 20px;
-    height: 400px;
+    max-height: 400px;
     cursor: pointer;
 }
 
@@ -30,6 +30,8 @@
 
 .movie-name {
     font-size: 20px;
+    text-align: center;
+    
 }
 
 .movie-rating {
@@ -61,4 +63,51 @@
 .add-watchlist:active {
     position:relative;
     top:1px;
+}
+
+
+/* slider styling */
+
+.slick-slider{
+    border: 1px solid black;
+}
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    list-style: none;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.slick-slide img {
+    display: block;
+    width: 248px;
+    border-radius: 20px;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0 27px 24px 67px; /* 0=gore 17=desno 24=dole 1=ljevo */
+}
+
+/* .slick-arrow {
+
+} */
+
+.slick-next {
+    right: 0;
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.slick-prev, .slick-next {
+    color: black;
 }

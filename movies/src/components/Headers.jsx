@@ -145,7 +145,7 @@ const Headers = () => {
 
                         <li>
 
-                            <div className="dropdown-wrapper">
+                            {/* <div className="dropdown-wrapper">
                                 <div onClick={toggleDropDown} className='dropdown-conteiner'>
                                     <NavLink to="#">
                                         <IoPersonCircleSharp />{userName}
@@ -160,7 +160,7 @@ const Headers = () => {
                                         <NavLink to="/update">Settings</NavLink>
                                     </div>
                                 )}
-                            </div>
+                            </div> */}
 
                         </li>
 
