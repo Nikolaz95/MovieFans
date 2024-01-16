@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { auth } from './config/Firebase-Config';
 
-
+//import slike
 import Profile from '../assets/pictures/avatar-profile.jpg';
+import Logo from '../assets/pictures/logo-movieFans.png';
 
 //icon import 
 import { IoPersonCircleSharp } from "react-icons/io5";
@@ -103,8 +104,7 @@ const Headers = () => {
             <div className="content-header">
 
                 <NavLink href="/" className="logo no-underline">
-                    <img src="" alt="" />
-                    <p className='title-name'>Movie Lovers</p>
+                    <img src={Logo} height={100} width={100} alt="" />
                 </NavLink>
 
 
